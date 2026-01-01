@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Figma to Salla - Transform your Figma designs into custom code for Salla stores">
+    <title>Figma to Salla - Custom Design Integration for Salla Stores</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 2rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 3rem;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .nav {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav a:hover {
+            color: #667eea;
+        }
+
+        .hero {
+            text-align: center;
+            color: white;
+            padding: 4rem 0;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #667eea;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        .features {
+            background: white;
+            padding: 4rem 0;
+            margin-top: 3rem;
+            border-radius: 20px 20px 0 0;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .feature-card {
+            padding: 2rem;
+            background: #f8f9fa;
+            border-radius: 10px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+
+        .how-it-works {
+            background: #f8f9fa;
+            padding: 4rem 0;
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .step {
+            text-align: center;
+            padding: 2rem;
+            background: white;
+            border-radius: 10px;
+            position: relative;
+        }
+
+        .step-number {
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #667eea;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+
+        .footer a {
+            color: #667eea;
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .nav {
+                margin-top: 1rem;
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">🎨 Figma to Salla</div>
+                <nav class="nav">
+                    <a href="#features">Features</a>
+                    <a href="#how-it-works">How It Works</a>
+                    <a href="#contact">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>Transform Figma Designs into Salla Store Code</h1>
+                <p>Seamlessly convert your Figma designs into custom HTML/CSS/JS code that integrates directly into your Salla store</p>
+                <a href="http://localhost:3001" class="cta-button">Get Started</a>
+            </div>
+        </section>
+
+        <section class="features" id="features">
+            <div class="container">
+                <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 1rem; color: #333;">Features</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🎨</div>
+                        <h3>Figma Integration</h3>
+                        <p>Extract design data directly from Figma frames, components, and text elements with our easy-to-use plugin.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">⚡</div>
+                        <h3>Instant Code Generation</h3>
+                        <p>Automatically convert Figma designs into clean, production-ready HTML, CSS, and JavaScript code.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🛒</div>
+                        <h3>Salla Store Integration</h3>
+                        <p>Deploy your custom code directly to Salla stores using App Snippet technology - no manual file uploads needed.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🔐</div>
+                        <h3>Secure OAuth</h3>
+                        <p>Connect your Salla store securely using OAuth 2.0 authentication with Partners Portal integration.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">💾</div>
+                        <h3>Cloud Storage</h3>
+                        <p>Your custom code is stored securely in MongoDB Atlas, accessible per store with dynamic loading.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🔄</div>
+                        <h3>Easy Updates</h3>
+                        <p>Update your designs in Figma and regenerate code instantly - changes reflect immediately in your store.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="how-it-works" id="how-it-works">
+            <div class="container">
+                <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 1rem; color: #333;">How It Works</h2>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <h3>Design in Figma</h3>
+                        <p>Create your store design using Figma frames, components, and text elements.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <h3>Run Plugin</h3>
+                        <p>Select your frames and run the "Switch Figma to Salla" plugin to extract design data.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <h3>Connect Store</h3>
+                        <p>Login with your Salla Partners account and connect your store via OAuth.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <h3>Generate Code</h3>
+                        <p>Enter your Store ID and generate custom HTML/CSS/JS code from your Figma design.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">5</div>
+                        <h3>Deploy to Store</h3>
+                        <p>Add the App Snippet in Partners Portal and your custom code appears in your store instantly.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer" id="contact">
+        <div class="container">
+            <p>&copy; 2024 Figma to Salla. Built for Salla Partners.</p>
+            <p style="margin-top: 1rem;">
+                <a href="https://partners.salla.sa">Salla Partners Portal</a> | 
+                <a href="https://docs.salla.dev">Salla Documentation</a>
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
+
