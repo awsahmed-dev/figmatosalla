@@ -228,7 +228,7 @@
                         const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
                         const backendUrl = isLocal 
                             ? 'http://localhost:3000'
-                            : 'https://your-backend.vercel.app'; // TODO: Update with your actual deployed backend URL
+                            : 'https://salla-to-figma-backend.vercel.app';
                         
                         document.getElementById('loginBtn').href = `${backendUrl}/oauth/authorize`;
                     })();
@@ -342,9 +342,8 @@
             }
             
             if (code) {
-                // Production backend URL - UPDATE THIS with your deployed backend URL from Vercel
-                // Get this URL after deploying backend: https://vercel.com/dashboard → Your Backend Project → Settings → Domains
-                const backendUrl = 'https://your-backend.vercel.app'; // ⚠️ REPLACE THIS with your actual backend URL
+                // Production backend URL
+                const backendUrl = 'https://salla-to-figma-backend.vercel.app';
                 
                 // Show processing message
                 document.body.innerHTML = `
