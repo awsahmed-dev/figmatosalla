@@ -306,6 +306,35 @@
             </p>
         </div>
     </footer>
+
+    <script>
+        // Handle OAuth callback if it lands on website (for production)
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.has('code')) {
+            // If callback lands here, redirect to backend
+            const code = urlParams.get('code');
+            const state = urlParams.get('state');
+            
+            // For production: Update this to your deployed backend URL
+            // For local: Use http://localhost:3000
+            const backendUrl = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+                ? 'http://localhost:3000'
+                : 'https://your-backend.vercel.app'; // Update with your deployed backend URL
+            
+            // Show processing message
+            document.body.innerHTML = `
+                <div style="display: flex; align-items: center; justify-content: center; min-height: 100vh; font-family: Arial; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                    <div style="text-align: center; padding: 2rem; background: white; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);">
+                        <h1 style="color: #667eea; margin-bottom: 1rem;">Processing authorization...</h1>
+                        <p style="color: #666;">Please wait while we complete the OAuth flow.</p>
+                    </div>
+                </div>
+            `;
+            
+            // Redirect to backend callback (backend handles the OAuth exchange)
+            window.location.href = `${backendUrl}/oauth/callback?code=${code}&state=${state || ''}`;
+        }
+    </script>
 </body>
 </html>
 
